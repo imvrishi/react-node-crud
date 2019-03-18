@@ -1,3 +1,5 @@
+import { mongo_url } from '../src/config'
+
 module.exports = {
-    DB: 'mongodb://localhost:28019/reactcrud'
+    DB: mongo_url
 }

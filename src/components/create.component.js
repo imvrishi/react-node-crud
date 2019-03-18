@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { server_url } from '../config';
 
 class Create extends Component {
     constructor(props) {
@@ -48,7 +49,7 @@ class Create extends Component {
             business_gst_number: ''
         });
 
-        axios.post('http://localhost:4000/business/add', obj)
+        axios.post(server_url + '/business/add', obj)
             .then(res => this.props.history.push('/index'));
     }
 

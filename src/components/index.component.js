@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import TableRow from './TableRow';
+import { server_url } from '../config';
 
 class Index extends Component {
     constructor(props) {
@@ -9,7 +10,7 @@ class Index extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:4000/business')
+        axios.get(server_url + '/business')
             .then(response => {
                 this.setState({ business: response.data });
             })

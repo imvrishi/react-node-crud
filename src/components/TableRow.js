@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import axios from 'axios';
+import { server_url } from '../config';
 
 class TableRow extends Component {
     delete = () => {
-        axios.get('http://localhost:4000/business/delete/'+this.props.obj._id)
+        axios.get(server_url + '/business/delete/'+this.props.obj._id)
             .then(res => this.props.remove(this.props.index))
             .catch(err => console.log(err));
     }
